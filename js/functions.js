@@ -4,11 +4,11 @@ function checkStringLenght (stringToCheck, maxAmountSimbols){
 
   if(stringToCheck.length <= maxAmountSimbols){
     //console.log(stringToCheck.length);
-    console.log('Строка проходит по длине');
+    //console.log('Строка проходит по длине');
     return true;
   }
   //console.log(stringToCheck.length);
-  console.log('Строка не проходит по длине');
+  //console.log('Строка не проходит по длине');
   return false;
 
 }
@@ -44,6 +44,7 @@ function getPositiveNumber(str){
     }
   }
 }
+getPositiveNumber('498 57sg3');
 
 //Нашла решение при помощи регулярных выражений..
 function getPositiveNumber2(str){
