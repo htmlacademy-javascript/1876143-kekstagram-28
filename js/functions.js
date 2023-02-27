@@ -20,7 +20,7 @@ function palindromCheck(str){
   }
   const strNoTabs = str.replaceAll(' ', ''); //извлекаю пробелы из начальной строки
 
-  const result = (reverseString.toLowerCase() === strNoTabs.toLowerCase()) ? true : false; //сравниваю 2 полученных строки предварительно привожу все символы к нижнему регистру
+  const result = (reverseString.toLowerCase() === strNoTabs.toLowerCase()); //сравниваю 2 полученных строки предварительно привожу все символы к нижнему регистру;исходный вариант - const result = (reverseString.toLowerCase() === strNoTabs.toLowerCase()) ? true : false;
 
   return result; //
 }
