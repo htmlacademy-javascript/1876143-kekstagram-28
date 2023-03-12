@@ -91,36 +91,3 @@ function createObject(){
 }
 // eslint-disable-next-line no-unused-vars
 const allObjects = Array.from({length: 25}, createObject);
-
-/*
-//Функция для получения номера описания, он равен номеру фото.
-//Но она получилась огромная и не знаю как её использовать дальше))
-
-function getNumberDescription(nameArray, keysName){
-  const arr = nameArray[keysName].split('');
-  const arr2 = [];
-  const result = [];
-  let result1 = '';
-  for(let i = 0; i <= arr.length; i++){
-    arr2.push(parseInt(arr[i], 10));
-  }
-  for(let j = 0; j <= arr2.length; j++){
-    if(!isNaN(arr2[j])){
-      result.push(arr2[j]);
-      result1 = String(result);
-      console.log(result1);
-    }
-    if(result.length > 1){
-      const a = result[0];
-      const b = result[1];
-      result1 = String(a) + String(b);
-      console.log(result1);
-    }
-  }
-  //console.log(arr);
-  //console.log(arr2);
-  return result1;
-}
-getNumberDescription(createObject(), 'url');
-
-*/
