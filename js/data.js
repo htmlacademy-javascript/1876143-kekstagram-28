@@ -1,5 +1,7 @@
 import {getRandomArrayElement} from './util.js';
 import {getNewNumberArray} from './util.js';
+import {createIdGenerator} from './util.js';
+import {createRandomUnicPhotoNumber} from './util.js';
 
 const DESCRIPTIONS = [
   'прекрасный пляж',
@@ -47,9 +49,10 @@ const NAMES = [
   'Билл',
 ];
 
-const photosId = getNewNumberArray(1,25);
 
 const photoNumbers = getNewNumberArray(1,25);
+
+const unicPhotoNumber = createRandomUnicPhotoNumber(photoNumbers[0], photoNumbers[photoNumbers.length - 1]);
 
 const likes = getNewNumberArray(15,200);
 
@@ -59,10 +62,12 @@ const avatarNumbers = getNewNumberArray(1,6);
 
 const SIMILAR_OBJECT_COUNT = 25;
 
+const photosId = createIdGenerator(SIMILAR_OBJECT_COUNT);
+
 function createObject(){
   const newObject = {
-    id: getRandomArrayElement(photosId),
-    url: `photos/${getRandomArrayElement(photoNumbers)}.jpg`,
+    id:photosId(),
+    url: `photos/${unicPhotoNumber()}.jpg`,
     description: getRandomArrayElement(DESCRIPTIONS),
     likes: getRandomArrayElement(likes),
     comments: [{id: getRandomArrayElement(commentsId)},
