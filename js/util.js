@@ -16,8 +16,8 @@ function getNewNumberArray(min,max) {
   return newArray;
 }
 
-function createIdGenerator (objectCount) {
-  let lastGeneratedId = - objectCount;
+function createIdGenerator () {
+  let lastGeneratedId = 0;
 
   return function () {
     lastGeneratedId += 1;
@@ -32,7 +32,6 @@ function createRandomUnicPhotoNumber (min, max) {
   return function () {
     let currentValue = getRandomInteger(min, max);
     if (previousValues.length >= (max - min + 1)) {
-      //console.error('Перебраны все числа из диапазона от');
       return null;
     }
     while (previousValues.includes(currentValue)) {

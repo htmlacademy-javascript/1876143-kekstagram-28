@@ -1,4 +1,4 @@
-import {createObjects} from './data.js';
+//import {createObjects} from './data.js';
 
 
 const photosContainer = document.querySelector('.pictures');
@@ -6,6 +6,30 @@ const photosContainer = document.querySelector('.pictures');
 const newPhotoTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
 
+const createPhoto = ({comments, url, likes, description}) => {
+  const newUserPhoto = newPhotoTemplate.cloneNode(true);
+  newUserPhoto.querySelector('.picture__img').src = url;
+  newUserPhoto.querySelector('.picture__comments').textContent = comments[0].id;
+  newUserPhoto.querySelector('.picture__likes').textContent = likes;
+  newUserPhoto.querySelector('.picture__info').alt = description;
+
+  return newUserPhoto;
+};
+
+const getNewUserPhotos = (pictures) => {
+  const fragment = document.createDocumentFragment();
+  pictures.forEach((picture) => {
+    const newPhoto = createPhoto(picture);
+    fragment.append(newPhoto);
+  });
+
+  photosContainer.append(fragment);
+};
+
+export {getNewUserPhotos};
+
+
+/*
 const newUserPhotos = createObjects();
 
 newUserPhotos.forEach((photo) => {
@@ -15,3 +39,5 @@ newUserPhotos.forEach((photo) => {
   newUserPhoto.querySelector('.picture__likes').textContent = photo.likes;
   photosContainer.appendChild(newUserPhoto);
 });
+*/
+
