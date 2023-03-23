@@ -1,7 +1,7 @@
 import {getRandomArrayElement} from './util.js';
 import {getNewNumberArray} from './util.js';
 import {createIdGenerator} from './util.js';
-import {createRandomUnicPhotoNumber} from './util.js';
+//import {createRandomUnicPhotoNumber} from './util.js';
 
 const DESCRIPTIONS = [
   'прекрасный пляж',
@@ -50,9 +50,10 @@ const NAMES = [
 ];
 
 
-const photoNumbers = getNewNumberArray(1,25);
+//const photoNumbers = getNewNumberArray(1,25);
 
-const unicPhotoNumber = createRandomUnicPhotoNumber(photoNumbers[0], photoNumbers[photoNumbers.length - 1]);
+//const unicPhotoNumber = createRandomUnicPhotoNumber(photoNumbers[0], photoNumbers[photoNumbers.length - 1]);
+const unicPhotoNumber = createIdGenerator();
 
 const likes = getNewNumberArray(15,200);
 

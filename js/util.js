@@ -42,7 +42,6 @@ function createRandomUnicPhotoNumber (min, max) {
   };
 }
 
-
 export {getRandomArrayElement};
 export {getNewNumberArray};
 export {createIdGenerator};
