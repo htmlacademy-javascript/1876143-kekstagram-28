@@ -63,7 +63,7 @@ const avatarNumbers = getNewNumberArray(1,6);
 
 const SIMILAR_OBJECT_COUNT = 25;
 
-const photosId = createIdGenerator(SIMILAR_OBJECT_COUNT);
+const photosId = createIdGenerator();
 
 function createObject(){
   const newObject = {
