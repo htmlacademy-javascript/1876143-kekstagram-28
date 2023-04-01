@@ -7,7 +7,6 @@ const getRandomInteger = (a, b) => {
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
-export {getRandomArrayElement};
 
 function getNewNumberArray(min,max) {
   const newArray = [];
@@ -17,4 +16,33 @@ function getNewNumberArray(min,max) {
   return newArray;
 }
 
+function createIdGenerator () {
+  let lastGeneratedId = 0;
+
+  return function () {
+    lastGeneratedId += 1;
+    return lastGeneratedId;
+  };
+}
+
+
+function createRandomUnicPhotoNumber (min, max) {
+  const previousValues = [];
+
+  return function () {
+    let currentValue = getRandomInteger(min, max);
+    if (previousValues.length >= (max - min + 1)) {
+      return null;
+    }
+    while (previousValues.includes(currentValue)) {
+      currentValue = getRandomInteger(min, max);
+    }
+    previousValues.push(currentValue);
+    return currentValue;
+  };
+}
+
+export {getRandomArrayElement};
 export {getNewNumberArray};
+export {createIdGenerator};
+export {createRandomUnicPhotoNumber};
