@@ -6,12 +6,13 @@ const photosContainer = document.querySelector('.pictures');
 const newPhotoTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
 
-const createPhoto = ({comments, url, likes, description}) => {
+const createPhoto = ({comments, url, likes, description, id}) => {
   const newUserPhoto = newPhotoTemplate.cloneNode(true);
   newUserPhoto.querySelector('.picture__img').src = url;
   newUserPhoto.querySelector('.picture__comments').textContent = comments[0].id;
   newUserPhoto.querySelector('.picture__likes').textContent = likes;
   newUserPhoto.querySelector('.picture__info').alt = description;
+  newUserPhoto.dataset.newUserPhotoId = id;
 
   return newUserPhoto;
 };

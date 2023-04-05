@@ -42,7 +42,11 @@ function createRandomUnicPhotoNumber (min, max) {
   };
 }
 
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+
 export {getRandomArrayElement};
 export {getNewNumberArray};
 export {createIdGenerator};
 export {createRandomUnicPhotoNumber};
+export {isEscapeKey};
